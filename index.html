@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Photoshop AM Constants</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="./css/vendor/pure-min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <h1>Photoshop AM Constants</h1>
+      <div class="description"><p>List of Photoshop constants used in AM-coding. Data from <a href="https://web.archive.org/web/20150624160853/http://www.pcpix.com/Photoshop/enum.htm">pcpix.com</a> (Web Archive version, original source is not available) </p>
+      </div>
+      <input placeholder="Search" v-model="searchQuery" autofocus class="search">
+      <table class="pure-table">
+        <thead>
+          <tr>
+            <th>kind</th>
+            <th>stringID</th>
+            <th>typeID</th>
+            <th>charID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="constant in constants | filterBy searchQuery | limitBy current" v-cloak>
+            <td>{{constant.kind}}</td>
+            <td>{{constant.stringID}}</td>
+            <td>{{constant.typeID}}</td>
+            <td>"{{constant.charID}}"</td>
+          </tr>
+        </tbody>
+      </table>
+      <button @click="current += 30">Load more</button>
+    </div>
+    <script src="./js/vendor/vue.min.js"></script>
+    <script src="./js/data.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+*:focus{
+  outline: none;
+}
+body {
+  font-family: 'Roboto';
+  line-height: 1.7rem;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  margin-bottom: 0;
+}
+
+a {
+  color: rgba(63, 139, 157, 1);
+  text-decoration: none;
+  }
+  a:hover{
+    color: rgba(221, 62, 124, 1);
+    border-bottom: 1px solid rgba(221, 62, 124, .5);
+  }
+
+table{
+  margin-top: 1rem;
+
+  width: 100%;
+  }
+
+  thead th {
+    background: #f5f5f4;
+  }
+  
+  td{
+    width: 25%;
+  }
+
+#app {
+  margin: 3rem auto;
+  margin-bottom: 5rem;
+  padding: 0 3rem;
+  max-width: 800px;
+  min-width: 520px;
+}
+
+.description p{
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search{
+  border: 1px solid lightgray;
+  
+  border-radius: 3px;
+  margin: 0;
+  padding: 10px;
+  
+  width: calc(100% - 20px);
+
+  transition: border .3s, box-shadow .3s;
+  }
+  .search:focus{
+    outline: none;
+    border: 1px solid #5EC2FF;
+    box-shadow: 0px 0px 0px 3px rgba(94,193,255,0.24);
+  }
+
+button {
+  border: 1px solid rgba(203, 203, 203, 1);
+  border-top: 0px;
+  background: transparent;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 0rem;
+  border-radius: 3px;
+  }
+  button:hover{
+    background: rgba(0,0,0, .05)
+  }
+  button:active{
+    background: rgba(0,0,0, .1)
+  }
+
+[v-cloak] {
+  display: none;
+}

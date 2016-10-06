@@ -1,0 +1,41 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Photoshop AM Constants
+
+    link(href='https://fonts.googleapis.com/css?family=Roboto:400,700', rel='stylesheet')
+    link(href='./css/vendor/pure-min.css', rel='stylesheet')
+    link(href='./css/styles.css', rel='stylesheet')
+
+  body
+    #app
+      h1 Photoshop AM Constants
+      .description
+        :markdown
+          List of Photoshop constants used in AM-coding
+
+      input(class='search', placeholder='Search', v-model='searchQuery' autofocus)
+      
+      table(class='pure-table')
+        thead
+          tr
+            th kind
+            th stringID
+            th typeID
+            th charID
+            //- th Comment
+        
+        tbody
+          tr(v-for='constant in constants | filterBy searchQuery | limitBy current' v-cloak)
+            td {{constant.kind}}
+            td {{constant.stringID}}
+            td {{constant.typeID}}
+            td "{{constant.charID}}"
+            //- td {{constant.comment}}
+      
+      button(@click='current += 30') Load more
+    
+    script(src='./js/vendor/vue.min.js')
+    script(src='./js/data.js')
+    script(src='./js/app.js')
